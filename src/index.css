@@ -1,0 +1,65 @@
+@import 'tailwindcss';
+
+/*
+ * Every pair below was measured against the composited background, including
+ * the opacity variants, before any of it was used. Lowest ratio on a text pair
+ * is 4.61:1 (muted on the raised panel). Figures are in the README.
+ */
+@theme {
+  --color-paper: #fbfaf8;
+  --color-card: #ffffff;
+  --color-ink: #1a1917;
+  --color-ink2: #423f3a;
+  --color-muted: #5e5a53;
+  --color-clay: #8a4a2b;
+  --color-clay-soft: #f7ede7;
+  --color-line: #e6e1d9;
+  --color-neg: #9e2b1e;
+  --color-neg-soft: #fbebe8;
+  --color-pos: #2a6338;
+  --color-pos-soft: #e8f1ea;
+  --color-warn: #86560a;
+  --color-warn-soft: #fbf2e0;
+
+  --color-panel: #171614;
+  --color-panel2: #201e1b;
+  --color-panel-line: #3a3733;
+  --color-on-panel: #fbfaf8;
+  --color-on-panel-2: #b8b2a6;
+  --color-on-panel-muted: #8c867c;
+  --color-panel-neg: #f2a6a0;
+  --color-panel-pos: #9bd3a8;
+  --color-panel-warn: #e3c277;
+  --color-panel-clay: #e8a87c;
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink2);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-clay);
+  outline-offset: 2px;
+}
+
+.on-panel :focus-visible {
+  outline-color: var(--color-panel-clay);
+}
+
+/* The one place a transition is wanted: a field emptying as a switch flips. */
+@media (prefers-reduced-motion: no-preference) {
+  .fieldblock {
+    transition: background-color 180ms ease, border-color 180ms ease;
+  }
+}
