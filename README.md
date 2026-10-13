@@ -9,7 +9,7 @@ logged. That is the whole point: the parts that break are the parts no smoke
 test covers, which is why a build like this gets handed over as nearly
 finished.
 
-Live: https://nullfield.vercel.app
+Live: https://shopify-headless-wordpress-demo.vercel.app
 
 ## The five faults
 
